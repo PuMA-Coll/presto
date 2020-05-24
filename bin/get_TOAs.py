@@ -29,6 +29,8 @@ scopes2 = {'GBT':'gbt',
           'LWA': 'lwa1',
           'VLA': 'vla',
           'FAST': 'fast',
+          'IAR1': 'iar1',
+          'IAR2': 'iar2',
           'MeerKAT': 'mk',
           'Geocenter': 'coe'}
 

@@ -254,6 +254,12 @@ void telescope_to_tempocode(char *inname, char *outname, char *obscode)
     } else if (strcmp(scope, "k7") == 0 ) {
         strcpy(obscode, "K7");
         strcpy(outname, "KAT-7");
+    } else if (strcmp(scope, "iar1") == 0) {
+       strcpy(obscode, "A1");
+       strcpy(obscode, "IAR1");
+    } else if (strcmp(scope, "iar2") == 0) {
+       strcpy(obscode, "A2");
+       strcpy(obscode, "IAR2");
     } else if (strcmp(scope, "geocenter") == 0) {
         strcpy(obscode, "0 ");
         strcpy(outname, "Geocenter");

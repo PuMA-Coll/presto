@@ -124,9 +124,17 @@ void get_telescope_name(int telescope_id, struct spectra_info *s)
         strcpy(s->telescope, "VLA");
         s->beam_FWHM = default_beam;
         break;
-    case 20:  // May need to change....
+    case 16:  // May need to change....
         strcpy(s->telescope, "CHIME");
         s->beam_FWHM = 2.0 / 3600.0 * beam_halfwidth(s->fctr, 20.0);
+        break;
+    case 19:
+        strcpy(s->telescope, "IAR1");
+        s->beam_FWHM = default_beam;
+        break;
+    case 20:
+        strcpy(s->telescope, "IAR2");
+        s->beam_FWHM = default_beam;
         break;
     case 21:  // May need to change....
         strcpy(s->telescope, "FAST");
@@ -183,6 +191,9 @@ void get_backend_name(int machine_id, struct spectra_info *s)
         break;
     case 20:
         strcpy(string, "CHIME+PSR");
+        break;
+    case 23:
+        strcpy(string, "Ettus-B205");
         break;
     case 64:
         strcpy(string, "KAT");

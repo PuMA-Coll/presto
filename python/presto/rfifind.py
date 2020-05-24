@@ -214,6 +214,14 @@ class rfifind(object):
         self.zap_chans = np.asarray(sorted(list(self.zap_chans)))
         if plot: self.plot_zapped_bandpass()
 
+    def read_bytemask(self):
+        # Added by PuMA Coll
+        x = open(self.basename + ".bytemask")
+        count = self.nchan * self.nint
+        self.bytemask = np.fromfile(x, dtype=np.int8, count=count)
+        self.bytemask.shape = (self.nint, self.nchan)
+        x.close()
+
     def plot_zapped_chans(self, device="/xwin"):
         plotxy(self.bandpass_avg, self.freqs,
                labx="Frequency (MHz)", device=device)
